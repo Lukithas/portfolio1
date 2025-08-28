@@ -1,0 +1,228 @@
+/* --- Importação de Fontes --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap');
+
+/* --- Estilos Gerais e Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif; /* Fonte principal */
+    background-color: #f4f7f9; /* Fundo cinza bem claro */
+    color: #333; /* Texto escuro */
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
+
+/* --- Container Principal --- */
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+nav .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+nav a {
+    color: #0056b3; /* Azul profissional */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 20px;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Efeito de linha sob o link no hover */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #007bff;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* --- Seções --- */
+section {
+    background-color: #ffffff;
+    margin-bottom: 25px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif; /* Fonte dos títulos */
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* --- Seção Apresentação (Layout Flex) --- */
+#apresentacao {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+#apresentacao .apresentacao-imagem {
+    flex-shrink: 0;
+}
+
+#apresentacao img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+#apresentacao .apresentacao-texto h2 {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+#apresentacao .apresentacao-texto p {
+    font-size: 1.1rem;
+}
+
+/* --- Seção Projetos --- */
+#projetos {
+    text-align: center;
+}
+#projetos p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+#projetos a {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#projetos a:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* --- Seção Contato --- */
+#contato {
+    text-align: center;
+}
+
+#contato p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+#contato a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#contato a:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsividade para telas menores --- */
+@media (max-width: 768px) {
+    #apresentacao {
+        flex-direction: column; /* Coloca imagem em cima do texto */
+        text-align: center;
+    }
+
+    #apresentacao .apresentacao-texto h2 {
+        text-align: center;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+}
+/* --- Rodapé (Footer) --- */
+footer {
+    background-color: #ffffff;
+    padding: 2rem 0;
+    margin-top: 30px;
+    border-top: 1px solid #dee2e6; /* Linha sutil de separação */
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Garante que o layout se ajuste em telas menores */
+}
+
+footer p {
+    color: #6c757d; /* Cor de texto mais suave */
+    font-size: 0.9rem;
+    margin: 5px 10px;
+}
+
+footer .voltar-ao-topo {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+footer .voltar-ao-topo:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Ajuste no rodapé para telas menores */
+@media (max-width: 768px) {
+    footer .container {
+        flex-direction: column; /* Itens ficam um sobre o outro */
+        gap: 15px; /* Espaçamento entre os itens empilhados */
+    }
+}
